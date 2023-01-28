@@ -1,0 +1,113 @@
+.dark {
+  &.container {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .title {
+    color: rgba(182, 202, 230, 0.85);
+  }
+
+  .extra {
+    color: rgba(182, 202, 230, 0.65);
+  }
+}
+
+html {
+  // 主色
+  --van-main-color: #ffffff;
+
+  // 页面背景
+  --van-page-background: rgba(247, 248, 250, 1);
+  --van-page-background-image: linear-gradient(#3975c6 60%, #f7f8fa);
+
+  //侧边栏
+  --van-layout-sider-color: rgb(255, 255, 255);
+  --van-layout-sider-font-color: rgba(26, 26, 26, 0.8);
+
+  // 字体
+  --van-font-color: rgba(41, 65, 86, 1);
+  --van-font-active-color: rgba(82, 129, 255, 1);
+  --van-font-unactive-color: rgba(41, 65, 86, 0.85);
+
+  // 卡片
+  --van-card-background: rgba(255, 255, 255, 1);
+  --van-card-title: rgba(41, 65, 86, 0.65);
+
+  // 指标卡片
+  --van-index-card-background: rgba(82, 129, 255, 0.05);
+  --van-index-card-color: rgba(41, 65, 86, 1);
+  --van-index-title: rgba(41, 65, 86, 0.85);
+  --van-index-compared-title: rgba(41, 65, 86, 0.45);
+
+  // 表格
+  --van-table-background: rgba(255, 255, 255, 1);
+  --van-table-hover-background: #f6f7fb;
+  --van-table-color: rgba(41, 65, 86, 0.85);
+  --van-table-label-color: rgba(41, 65, 86, 0.65);
+  --van-table-grid-line: #dfe3e6;
+
+  //图表字体
+  --van-chart-font-color: rgba(41, 65, 86, 1);
+
+  --van-tabs-header-mask: linear-gradient(to left, #010116, rgba(255, 255, 255, 0));
+
+  // 加载状态背景
+  --van-loading-background: rgba(255, 255, 255, 0.55);
+
+  // 基于实时指标的
+  --van-real-header-color: rgba(255, 255, 255, 1);
+  --van-real-header-label-color: rgba(255, 255, 255, 0.65);
+  --van-real-header-compared-color: rgba(255, 255, 255, 0.45);
+  --van-real-header-bg: url(./pages/RealTime/images/header_light.png);
+
+  // 固定搜索头部的背景色
+  --affix-header-background-color: #3975c6;
+}
+html[data-prefers-color-scheme='dark'] {
+  --van-main-color: #010116;
+
+  --van-page-background: rgba(36, 36, 36, 0.7);
+  --van-page-background-image: linear-gradient(#010116 60%, #010116);
+
+  //侧边栏
+  --van-layout-sider-color: rgb(26, 26, 26);
+  --van-layout-sider-font-color: rgb(255, 255, 255);
+
+  // 字体
+  --van-font-color: rgba(182, 202, 230, 1);
+  --van-font-active-color: rgba(82, 129, 255, 1);
+  --van-font-unactive-color: rgba(255, 255, 255, 0.65);
+
+  // 卡片
+  --van-card-background: rgba(255, 255, 255, 0.1);
+  --van-card-title: rgba(182, 202, 230, 1);
+
+  // 指标卡片
+  --van-index-card-background: rgba(255, 255, 255, 0.03);
+  --van-index-card-color: rgba(182, 202, 230, 1);
+  --van-index-title: rgba(182, 202, 230, 0.85);
+  --van-index-compared-title: rgba(182, 202, 230, 0.45);
+
+  // 表格
+  --van-table-background: #1a1a2d;
+  --van-table-hover-background: #34304a;
+  --van-table-color: rgba(182, 202, 230, 1);
+  --van-table-label-color: rgba(182, 202, 230, 0.65);
+  --van-table-grid-line: #443c4a;
+
+  //图表字体
+  --van-chart-font-color: rgba(182, 202, 230, 1);
+
+  --van-tabs-header-mask: linear-gradient(to left, #ffffff, rgba(0, 0, 0, 0));
+
+  // 加载状态背景
+  --van-loading-background: rgba(0, 0, 0, 0.35);
+
+  // 基于实时指标的
+  --van-real-header-color: rgba(182, 202, 230, 1);
+  --van-real-header-label-color: rgba(182, 202, 230, 0.65);
+  --van-real-header-compared-color: rgba(182, 202, 230, 0.45);
+  --van-real-header-bg: url(./pages/RealTime/images/header.png);
+
+  --affix-header-background-color: var(--van-page-background);
+}

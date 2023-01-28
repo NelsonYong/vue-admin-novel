@@ -16,8 +16,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "@types/watermark-dom": "^2.3.1",
     "@vitejs/plugin-legacy": "^1.6.4",
+    "ant-design-vue": "^3.2.15",
     "axios": "^0.24.0",
     "classnames": "^2.3.2",
     "dayjs": "^1.10.7",

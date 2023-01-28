@@ -5,6 +5,7 @@ import { routers } from './routers'
 import store from './store'
 
 import './styles/tailwindcss.css'
+import './styles/themes.less'
 
 const app = createApp(App)
 
