@@ -2,7 +2,7 @@ export function frontSchedulingEnterView(
   container: HTMLDivElement,
   target: HTMLDivElement,
   scaleNum = 4,
-  onSuccess?: (top: number) => void,
+  onSuccess?: (top: number) => void
 ) {
   const containerCenter = getDOMCenter(container)
   const top = getElementTop(target) - target.clientHeight / 4
@@ -14,7 +14,9 @@ export function frontSchedulingEnterView(
     (target.clientHeight * (4 / 2)) / 2 +
     (target.clientHeight * (scalecha / 2)) / 2
   const left_ =
-    containerCenter.left - (target.clientWidth * (4 / 2)) / 2 + target.clientWidth * (scalecha / 2)
+    containerCenter.left -
+    (target.clientWidth * (4 / 2)) / 2 +
+    target.clientWidth * (scalecha / 2)
 
   const k = (top_ - top) / (left_ - left)
   const distance = Math.sqrt((top_ - top) ** 2 + (left_ - left) ** 2)
@@ -75,16 +77,20 @@ export function frontSchedulingTransformEnterView(
   target: HTMLDivElement,
   scaleNum = 4,
   time = 0.3,
-  onSuccess?: (top: number) => void,
+  onSuccess?: (top: number) => void
 ) {
   const containerCenter = getDOMCenter(container)
   const scalecha = scaleNum - 4
   const top_ =
     containerCenter.top -
+    (scaleNum * 12) / 2 -
     (target.clientHeight * (4 / 2)) / 2 +
     (target.clientHeight * (scalecha / 2)) / 2
   const left_ =
-    containerCenter.left - (target.clientWidth * (4 / 2)) / 2 + target.clientWidth * (scalecha / 2)
+    containerCenter.left -
+    (30 * scaleNum) / 2 -
+    (target.clientWidth * (4 / 2)) / 2 +
+    target.clientWidth * (scalecha / 2)
 
   target.style.transition = `all ${time}s`
   target.style.transform = `rotate3d(0,1,0,0deg) scale3d(${scaleNum},${scaleNum},${scaleNum})`
@@ -99,12 +105,14 @@ export function getDOMCenter(target: HTMLDivElement) {
   //中心位置
   const center = {
     left: rect.left + (rect.right - rect.left) / 2,
-    top: rect.top + (rect.bottom - rect.top) / 2,
+    top: rect.top + (rect.bottom - rect.top) / 2
   }
-  const scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft
-  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-  center.left = scrollLeft + center.left - 180 / 2
-  center.top = scrollTop + center.top - 80
+  const scrollLeft =
+    document.body.scrollLeft || document.documentElement.scrollLeft
+  const scrollTop =
+    document.body.scrollTop || document.documentElement.scrollTop
+  center.left = scrollLeft + center.left
+  center.top = scrollTop + center.top
 
   return center
 }

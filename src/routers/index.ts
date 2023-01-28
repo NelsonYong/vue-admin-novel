@@ -14,11 +14,11 @@ const routers = createRouter({
       path: '/setup',
       component: () => import('@/views/setup/index.vue')
     },
-     {
-      name: 'desktop',
-      path: '/desktop',
-      component: () => import('@/views/desktop/index.vue'),
-    },
+    {
+      name: 'stage-manager',
+      path: '/stage-manager',
+      component: () => import('@/views/stage-manager/index.vue')
+    }
   ]
 })
 

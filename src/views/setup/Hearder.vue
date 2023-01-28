@@ -11,39 +11,38 @@
 </template>
 
 <script lang="ts" setup>
+defineProps<{
+  title?: string
+}>()
 
-  defineProps<{
-    title?: string
-  }>()
+// @ts-ignore
+const [darkMode, setDarkMode] = inject<any>('darkMode')
+const [value, { toggle, set }] = useToggle()
 
+onMounted(() => {
   // @ts-ignore
-  const [darkMode, setDarkMode] = inject<any>('darkMode')
-  const [value, { toggle, set }] = useToggle()
+  set(darkMode.value)
+  setDarkMode?.(localStorage.getItem('dark-mode-enabled')?.includes('true'))
+})
 
-  onMounted(() => {
-    // @ts-ignore
-    set(darkMode.value)
-    setDarkMode?.(localStorage.getItem('dark-mode-enabled')?.includes('true'))
-  })
+watch(value, (v) => {
+  setDarkMode(v)
+})
 
-  watch(value, (v) => {
-    setDarkMode(v)
-  })
-
-  const handleClick = () => {
-    toggle()
-  }
+const handleClick = () => {
+  toggle()
+}
 </script>
 
 <style scoped lang="less">
-  img {
-    width: 300px;
-    height: 300px;
-  }
+img {
+  width: 300px;
+  height: 300px;
+}
 
-  .header {
-    font-size: 64px;
-    font-weight: 600;
-    text-align: center;
-  }
+.header {
+  font-size: 64px;
+  font-weight: 600;
+  text-align: center;
+}
 </style>
