@@ -1,16 +1,21 @@
 <template>
-  <img
-    @click="handleClick"
-    src="https://vuejs.org/images/logo.png"
-    alt="vue logo"
-    style="cursor: pointer"
-  />
-  <div class="header">{{ title ?? '-' }}</div>
-  <div>点击图标切换主题色</div>
+  <div class="flex flex-col items-center justify-center h-full w-full mt-20">
+    <img
+      @click="handleClick"
+      src="https://raw.githubusercontent.com/InhiblabCore/vue-hooks-plus/master/packages/hooks/docs/public/logo.png"
+      alt="logo"
+      style="cursor: pointer"
+    />
+    <div @click="handleClick" class="header cursor-pointer">
+      {{ title ?? '-' }}
+    </div>
+    <div>Click Logo & Title 👆 Change Theme</div>
+  </div>
   <!-- <div class="header" v-boolean="boolean">test</div> -->
 </template>
 
 <script lang="ts" setup>
+import JSConfetti from 'js-confetti'
 defineProps<{
   title?: string
 }>()
@@ -18,6 +23,8 @@ defineProps<{
 // @ts-ignore
 const [darkMode, setDarkMode] = inject<any>('darkMode')
 const [value, { toggle, set }] = useToggle()
+
+const confetti = new JSConfetti()
 
 onMounted(() => {
   // @ts-ignore
@@ -31,12 +38,13 @@ watch(value, (v) => {
 
 const handleClick = () => {
   toggle()
+  confetti.addConfetti()
 }
 </script>
 
 <style scoped lang="less">
 img {
-  width: 300px;
+  width: 370px;
   height: 300px;
 }
 
